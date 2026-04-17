@@ -50,6 +50,7 @@ services:
   emongo:
     image: mongo:4
     container_name: emongo
+    # set environment variables to intialize the db
     environment:
       - MONGO_INITDB_DATABASE=epoc
     ports:
@@ -60,7 +61,7 @@ services:
     container_name: emartdb
     ports:
       - "3306:3306"
-    # set environment variables to intialize the db
+    # set environment variables for root password and database name
     environment:
       - MYSQL_ROOT_PASSWORD=emartdbpass
       - MYSQL_DATABASE=books
