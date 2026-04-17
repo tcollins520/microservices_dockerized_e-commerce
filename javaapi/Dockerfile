@@ -10,7 +10,7 @@ COPY ./ /usr/src/app/
 # run mvn install to build the artifact
 RUN mvn install -DskipTests
 
-#stage 2 host Artifact
+#stage 2 host Artifact in java container
 FROM eclipse-temurin:8-jre
 WORKDIR /usr/src/app/
 
