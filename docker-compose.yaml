@@ -7,6 +7,7 @@ services:
     ports:
       - "4200:4200"
     # container name should be the same as what's in config file, the name is the DNS
+    image: tcollins50/emartapp_client
     container_name: client
     # api and webapi containers should start before client container starts up
     depends_on:
@@ -18,6 +19,7 @@ services:
       context: ./nodeapi
     ports:
       - "5000:5000"
+    image: tcollins50/emartapp_api
     restart: always
     container_name: api
     # nginx container and mongo db needs to start before api container starts
@@ -30,6 +32,7 @@ services:
       context: ./javaapi
     ports:
       - "9000:9000"
+    image: tcollins50/emartapp_webapi
     restart: always
     container_name: webapi
     # emartdb should start before webapi starts
