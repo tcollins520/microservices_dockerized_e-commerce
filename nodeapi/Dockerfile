@@ -1,5 +1,5 @@
-# multi-stage nodeapi app
-#1 build artifact
+# multi-stage nodejs app
+#1 build nodejs artifact
 FROM node:14 AS nodeapi-build
 # set working directory inside of the container
 WORKDIR /usr/src/app
@@ -8,7 +8,7 @@ COPY ./ ./nodeapi/
 # cd into nodeapi dir and run npm install to build the artifact
 RUN cd nodeapi && npm install
 
-#2 host artifact
+#2 host artifact node container
 FROM node:14
 WORKDIR /usr/src/app/
 # copy build image from step 1 that is in /usr/src/app/nodeapi/ to work dir which is /usr/src/app/
