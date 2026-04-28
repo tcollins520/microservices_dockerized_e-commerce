@@ -9,7 +9,7 @@ COPY ./ ./client
 # cd in client directory and run npm install and npm build with the container name prod
 RUN cd client && npm install && npm run build --prod
 
-#stage 2 host the artifact in nginx container
+#stage 2 host the built docker in nginx container
 # use official nginx image as the base image
 # our application will be hosted on nginx app
 FROM nginx:latest
