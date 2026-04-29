@@ -1,16 +1,14 @@
 # multi-stage java web app dockerfile
-#stage 1 build java web app artifact using Maven
+#-------stage 1: build java web app artifact using Maven-------
 FROM maven:3.9-eclipse-temurin-8 AS build_image
 # set work dir inside of container
 WORKDIR /usr/src/app/
-# run apt update and install maven
-RUN apt update && apt install maven -y
 # copy project files to work dir
-COPY ./ /usr/src/app/
+COPY . .
 # run mvn install to build the artifact
-RUN mvn install -DskipTests
+RUN mvn clean package  -DskipTests
 
-#stage 2 host Artifact in java container
+#--------stage 2: host Artifact in java container--------
 FROM eclipse-temurin:8-jre
 WORKDIR /usr/src/app/
 
