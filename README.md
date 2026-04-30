@@ -3,6 +3,17 @@
 This project demonstrates a containerized microservices-based e-commerce application using Docker. The application is composed of multiple independent services that communicate with each other to deliver a complete shopping experience.
 
 The goal of this project is to showcase modern DevOps practices including containerization, service isolation, and scalable architecture design.
+________________________________________
+🏗️ Architecture Overview
+Client → Frontend → API Gateway → Microservices → Database
+________________________________________
+# Prerequisites
+- node 14
+- JRE 8
+- Maven 3.9
+- MySQL 8
+- MongoDB
+________________________________________
 
 🧰 Tech Stack
 Docker (Containerization)
@@ -11,10 +22,6 @@ Java / Spring Boot (Backend services)
 Node.js / Frontend (UI)
 REST APIs (Service communication)
 AWS (ECR, ECS/EKS integration - optional)
-________________________________________
-🏗️ Architecture Overview
-Client → Frontend → API Gateway → Microservices → Database
-
 Each service runs in its own container, allowing independent scaling and deployment.
 ________________________________________
 📦 Microservices Included
